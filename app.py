@@ -12,7 +12,7 @@ app = Flask(__name__)
 def sample():
     return render_template('index.html')
 
-@app.route("/predict",methods = ['GET','POST'])
+@app.route("/predict",methods = ['POST'])
 def fun3():
     a = [float(i) for i in request.form.values()]
     b = [np.array(a)]
@@ -22,4 +22,5 @@ def fun3():
 
 
 if __name__ == '__main__':
+
     app.run(debug=True)
